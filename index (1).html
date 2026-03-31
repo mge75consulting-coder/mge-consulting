@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MGE Consulting — Agents IA sur-mesure</title>
+<meta name="description" content="MGE Consulting déploie des agents IA sur-mesure pour PME et indépendants. Make.com, Claude AI, GPT-4o, Supabase. Île-de-France.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#0d0d0d;--cream:#f7f4ef;--gold:#c9a84c;--gold2:#e8d49a;--muted:#6b6560;--white:#ffffff;--green:#3dba7c;--blue:#4a90d9}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:1rem 4vw;background:rgba(247,244,239,0.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,168,76,0.15);animation:fadeDown .6s ease both}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;letter-spacing:.08em;color:var(--ink);text-decoration:none}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center}
+.nav-links a{font-size:.73rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--ink)!important;padding:.5rem 1.2rem;border-radius:100px;font-weight:600!important;transition:all .2s!important}
+.nav-cta:hover{background:var(--ink)!important;color:var(--cream)!important;transform:translateY(-1px)}
+.nav-comm{background:var(--ink)!important;color:var(--cream)!important;padding:.5rem 1.2rem;border-radius:100px;transition:all .2s!important}
+.nav-comm:hover{background:var(--gold)!important;color:var(--ink)!important}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:9rem 4vw 5rem;gap:4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 65% 65% at 82% 18%,rgba(201,168,76,.12) 0%,transparent 70%),radial-gradient(ellipse 45% 45% at 8% 82%,rgba(26,26,46,.06) 0%,transparent 60%);pointer-events:none}
+.hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.05) 1px,transparent 1px);background-size:55px 55px;pointer-events:none}
+.hero-left{position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:100px;padding:.36rem .95rem;font-size:.7rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem;animation:fadeUp .8s .1s ease both}
+.badge-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.7rem,4.8vw,5rem);font-weight:300;line-height:1.06;animation:fadeUp .8s .25s ease both}
+h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{margin-top:1.5rem;font-size:.98rem;font-weight:300;line-height:1.78;color:var(--muted);max-width:450px;animation:fadeUp .8s .4s ease both}
+.hero-actions{display:flex;gap:1rem;margin-top:2.2rem;flex-wrap:wrap;animation:fadeUp .8s .55s ease both}
+.btn{display:inline-block;padding:.85rem 2rem;border-radius:100px;font-size:.85rem;font-weight:500;text-decoration:none;transition:all .25s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+.btn-dark{background:var(--ink);color:var(--cream)}
+.btn-dark:hover{background:var(--gold);color:var(--ink);transform:translateY(-2px);box-shadow:0 8px 22px rgba(201,168,76,.28)}
+.btn-outline{border:1.5px solid rgba(13,13,13,.2);color:var(--ink)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--ink);font-weight:600}
+.btn-gold:hover{background:var(--ink);color:var(--cream);transform:translateY(-2px)}
+.hero-right{position:relative;z-index:2;animation:fadeIn 1.1s .35s ease both}
+.hero-img{position:relative;border-radius:22px;overflow:hidden;height:520px;box-shadow:0 24px 64px rgba(13,13,13,.2)}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(13,13,13,.78) 100%)}
+.hero-img-info{position:absolute;bottom:1.4rem;left:1.4rem;right:1.4rem;background:rgba(13,13,13,.45);backdrop-filter:blur(14px);border:1px solid rgba(201,168,76,.28);border-radius:12px;padding:1rem 1.2rem}
+.hii-label{font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500;display:block;margin-bottom:.5rem}
+.hii-tags{display:flex;gap:.4rem;flex-wrap:wrap}
+.hii-tag{font-size:.69rem;background:rgba(247,244,239,.09);color:rgba(247,244,239,.88);padding:.2rem .65rem;border-radius:6px}
+.hii-tag.live::before{content:'🟢 '}
+
+/* TICKER */
+.ticker{background:var(--ink);padding:.8rem 0;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;animation:ticker 35s linear infinite}
+.ticker-track span{color:rgba(247,244,239,.45);font-size:.69rem;letter-spacing:.12em;text-transform:uppercase;padding:0 1.8rem}
+.ticker-track .sep{color:var(--gold);opacity:.6}
+
+/* STATS */
+.stats-bar{background:var(--ink);padding:2.2rem 4vw;display:flex;justify-content:space-around;gap:2rem;border-top:1px solid rgba(247,244,239,.05)}
+.stat-item{text-align:center}
+.stat-item .n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:var(--gold);display:block}
+.stat-item .l{font-size:.71rem;color:rgba(247,244,239,.45);letter-spacing:.07em;text-transform:uppercase}
+
+/* SECTIONS */
+section{padding:7rem 4vw}
+.eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem}
+.stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1.85rem,3.5vw,3.2rem);font-weight:300;line-height:1.14;color:var(--ink);margin-bottom:1.3rem}
+.stitle em{font-style:italic;color:var(--gold)}
+.sbody{font-size:.93rem;font-weight:300;line-height:1.8;color:var(--muted);max-width:530px}
+
+/* STACK */
+#stack{background:var(--white)}
+.stack-intro{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin:3rem 0}
+.stack-img{border-radius:18px;overflow:hidden;height:360px;box-shadow:0 14px 44px rgba(13,13,13,.12)}
+.stack-img img{width:100%;height:100%;object-fit:cover}
+.stack-points{display:flex;flex-direction:column;gap:1.2rem}
+.sp{display:flex;gap:.9rem;align-items:flex-start}
+.sp-num{width:32px;height:32px;border-radius:8px;background:var(--ink);color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.sp-text h5{font-size:.88rem;font-weight:500;margin-bottom:.2rem;color:var(--ink)}
+.sp-text p{font-size:.76rem;font-weight:300;line-height:1.55;color:var(--muted)}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:1rem;margin-bottom:2.5rem}
+.tool{background:var(--cream);border-radius:12px;padding:1.2rem 1rem;border:1px solid rgba(201,168,76,.11);transition:all .3s;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.55rem}
+.tool:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(13,13,13,.08);border-color:rgba(201,168,76,.3)}
+.tool-ico{font-size:1.7rem;width:46px;height:46px;display:flex;align-items:center;justify-content:center;background:rgba(201,168,76,.07);border-radius:10px}
+.tool-name{font-weight:500;font-size:.8rem;color:var(--ink)}
+.tool-desc{font-size:.68rem;color:var(--muted);font-weight:300;line-height:1.4}
+.tbadge{font-size:.6rem;padding:.18rem .58rem;border-radius:100px;font-weight:500}
+.tb-ia{background:rgba(201,168,76,.12);color:var(--gold)}
+.tb-auto{background:rgba(61,186,124,.1);color:var(--green)}
+.tb-data{background:rgba(99,132,255,.1);color:#6384ff}
+.tb-dist{background:rgba(255,107,107,.1);color:#ff6b6b}
+.tb-create{background:rgba(168,85,247,.1);color:#a855f7}
+.stack-cta-bar{background:var(--ink);border-radius:16px;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.scb h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--cream);margin-bottom:.3rem}
+.scb p{font-size:.78rem;color:rgba(247,244,239,.4);font-weight:300}
+
+/* AGENTS CATALOGUE */
+#agents{background:var(--cream)}
+.agents-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem}
+
+/* AGENT FEATURED FULL WIDTH */
+.agent-featured{background:var(--ink);border-radius:20px;padding:2.5rem;margin-bottom:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;border:1px solid rgba(201,168,76,.3);position:relative;overflow:hidden}
+.agent-featured::before{content:'';position:absolute;top:0;right:0;width:300px;height:300px;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%);pointer-events:none}
+.af-left .live-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(61,186,124,.15);border:1px solid rgba(61,186,124,.3);border-radius:100px;padding:.3rem .9rem;font-size:.68rem;font-weight:600;color:var(--green);margin-bottom:1.2rem;letter-spacing:.06em;text-transform:uppercase}
+.af-left .live-badge::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+.af-left h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--cream);line-height:1.2;margin-bottom:.8rem}
+.af-left h3 em{font-style:italic;color:var(--gold)}
+.af-left p{font-size:.88rem;font-weight:300;line-height:1.7;color:rgba(247,244,239,.65);margin-bottom:1.2rem}
+.af-tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
+.af-tool{font-size:.65rem;padding:.22rem .6rem;border-radius:6px;background:rgba(247,244,239,.08);color:rgba(247,244,239,.55)}
+.af-price-block{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);border-radius:12px;padding:1.2rem 1.5rem;display:inline-block}
+.af-price-block .setup{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1}
+.af-price-block .setup span{font-size:.85rem;font-weight:300;font-family:'DM Sans',sans-serif;color:rgba(201,168,76,.6)}
+.af-price-block .mensuel{font-size:.8rem;color:rgba(201,168,76,.7);margin-top:.3rem}
+.af-right{display:flex;flex-direction:column;gap:.8rem}
+.af-feature{display:flex;align-items:flex-start;gap:.8rem;background:rgba(247,244,239,.05);border-radius:10px;padding:.9rem 1.1rem;border:1px solid rgba(247,244,239,.07)}
+.af-feature .ico{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.af-feature h5{font-size:.82rem;font-weight:500;color:var(--cream);margin-bottom:.2rem}
+.af-feature p{font-size:.74rem;font-weight:300;color:rgba(247,244,239,.5);line-height:1.45}
+
+/* AGENTS GRID */
+.agents-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.3rem}
+.ac{background:var(--white);border-radius:16px;padding:1.7rem;border:1px solid rgba(201,168,76,.11);transition:all .3s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.ac::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.ac:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(13,13,13,.09);border-color:rgba(201,168,76,.3)}
+.ac:hover::after{transform:scaleX(1)}
+.ac-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}
+.ac-ico{width:40px;height:40px;background:rgba(201,168,76,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.ac-status-badge{font-size:.63rem;font-weight:500;padding:.22rem .65rem;border-radius:100px;border:1px solid}
+.status-available{color:var(--muted);border-color:rgba(107,101,96,.25);background:rgba(107,101,96,.06)}
+.status-coming{color:var(--blue);border-color:rgba(74,144,217,.25);background:rgba(74,144,217,.06)}
+.ac-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:.4rem}
+.ac-desc{font-size:.79rem;font-weight:300;line-height:1.65;color:var(--muted);margin-bottom:1rem;flex:1}
+.ac-tools-row{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.9rem}
+.ac-tool{font-size:.6rem;padding:.15rem .48rem;border-radius:5px;background:rgba(13,13,13,.05);color:var(--muted)}
+.ac-price{display:flex;justify-content:space-between;align-items:center;padding-top:.9rem;border-top:1px solid rgba(13,13,13,.06)}
+.ac-price-setup{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--ink)}
+.ac-price-mo{font-size:.72rem;color:var(--muted)}
+
+/* MODAL CATALOGUE */
+.modal-overlay{position:fixed;inset:0;background:rgba(13,13,13,.75);backdrop-filter:blur(8px);z-index:500;display:none;align-items:center;justify-content:center;padding:2rem}
+.modal-overlay.open{display:flex}
+.modal{background:var(--cream);border-radius:24px;max-width:900px;width:100%;max-height:90vh;overflow-y:auto;position:relative;padding:3rem;box-shadow:0 32px 80px rgba(13,13,13,.3)}
+.modal-close{position:sticky;top:0;float:right;background:var(--ink);color:var(--cream);border:none;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;margin-left:auto}
+.modal h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+.modal h2 em{font-style:italic;color:var(--gold)}
+.modal-sub{font-size:.88rem;color:var(--muted);margin-bottom:2.5rem}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.mc{background:var(--white);border-radius:14px;padding:1.5rem;border:1px solid rgba(201,168,76,.12)}
+.mc-head{display:flex;align-items:center;gap:.8rem;margin-bottom:.7rem}
+.mc-ico{font-size:1.4rem}
+.mc-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--ink)}
+.mc-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:.9rem}
+.mc-price{font-size:.8rem;font-weight:500;color:var(--gold)}
+
+/* PROCESS */
+#process{background:var(--white)}
+.proc-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:4rem}
+.steps{display:flex;flex-direction:column}
+.step{display:flex;gap:1.3rem;position:relative;padding-bottom:2.2rem}
+.step:last-child{padding-bottom:0}
+.step:not(:last-child)::after{content:'';position:absolute;left:17px;top:38px;bottom:0;width:1px;background:linear-gradient(to bottom,rgba(201,168,76,.3),transparent)}
+.step-n{width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-c h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;margin-bottom:.3rem;color:var(--ink)}
+.step-c p{font-size:.82rem;font-weight:300;line-height:1.6;color:var(--muted)}
+.proc-vis{background:var(--ink);border-radius:18px;overflow:hidden;position:sticky;top:5rem}
+.proc-vis-img{height:200px;overflow:hidden;position:relative}
+.proc-vis-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.proc-vis-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 25%,var(--ink) 100%)}
+.proc-vis-body{padding:1.7rem}
+.pv-label{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(201,168,76,.65);margin-bottom:1.1rem}
+.pv-flow{display:flex;flex-direction:column;gap:.55rem}
+.pv-n{background:rgba(247,244,239,.05);border:1px solid rgba(247,244,239,.08);border-radius:8px;padding:.7rem 1rem;display:flex;align-items:center;gap:.65rem;font-size:.77rem;color:rgba(247,244,239,.78);font-weight:300}
+.pv-arr{text-align:center;color:rgba(201,168,76,.38);font-size:.9rem}
+.pv-ok{background:rgba(61,186,124,.08);border-color:rgba(61,186,124,.22);color:var(--green);font-weight:500}
+
+/* TARIFS */
+#tarifs{background:var(--cream)}
+.tarifs-intro{text-align:center;margin-bottom:4rem}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.pc{border-radius:18px;padding:2.2rem;border:1.5px solid rgba(201,168,76,.16);transition:all .3s;background:var(--white);position:relative}
+.pc:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(13,13,13,.09)}
+.pc.hl{background:var(--ink);border-color:var(--gold)}
+.pc-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--ink);font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .9rem;border-radius:100px;white-space:nowrap}
+.pc-tier{font-size:.66rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem}
+.pc-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:.8rem}
+.pc.hl .pc-name{color:var(--cream)}
+.pc-setup{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:600;color:var(--ink);line-height:1}
+.pc.hl .pc-setup{color:var(--cream)}
+.pc-setup sub{font-size:.85rem;font-weight:300;font-family:'DM Sans',sans-serif;color:var(--muted);vertical-align:middle}
+.pc.hl .pc-setup sub{color:rgba(247,244,239,.4)}
+.pc-mensuel{font-size:.82rem;color:var(--muted);margin-top:.25rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(13,13,13,.07);margin-bottom:1.2rem}
+.pc.hl .pc-mensuel{color:rgba(247,244,239,.4);border-color:rgba(247,244,239,.08)}
+.pc-feats{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.6rem}
+.pc-feats li{font-size:.78rem;font-weight:300;color:var(--muted);display:flex;align-items:flex-start;gap:.48rem;line-height:1.4}
+.pc.hl .pc-feats li{color:rgba(247,244,239,.68)}
+.pc-feats li::before{content:'→';color:var(--gold);font-size:.72rem;flex-shrink:0;margin-top:.06rem}
+.pc-cta{display:block;text-align:center;padding:.8rem;border-radius:100px;font-size:.79rem;font-weight:500;text-decoration:none;transition:all .25s;border:1.5px solid rgba(13,13,13,.16);color:var(--ink)}
+.pc-cta:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.pc.hl .pc-cta{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.pc.hl .pc-cta:hover{background:var(--cream);border-color:var(--cream)}
+.tarifs-note{text-align:center;margin-top:2rem;font-size:.82rem;color:var(--muted);background:var(--white);border-radius:12px;padding:1.3rem;border:1px solid rgba(201,168,76,.11)}
+
+/* TEMOIGNAGES */
+#temoignages{background:var(--white)}
+.temo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3.5rem}
+.tc{background:var(--cream);border-radius:16px;padding:1.9rem;border:1px solid rgba(201,168,76,.11);transition:all .3s}
+.tc:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(13,13,13,.07)}
+.tc-stars{color:var(--gold);margin-bottom:.85rem;font-size:.9rem}
+.tc-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;font-style:italic;line-height:1.6;color:var(--ink);margin-bottom:1.1rem}
+.tc-author{display:flex;align-items:center;gap:.7rem}
+.tc-av{width:34px;height:34px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--gold);font-weight:600;flex-shrink:0}
+.tc-name{font-size:.79rem;font-weight:500;color:var(--ink)}
+.tc-role{font-size:.7rem;color:var(--muted)}
+
+/* FAQ */
+#faq{background:var(--cream)}
+.faq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:.5rem;margin-top:2rem}
+.faq-item{background:var(--white);border-radius:12px;border:1px solid rgba(201,168,76,.11);overflow:hidden}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.3rem;cursor:pointer;font-size:.85rem;font-weight:500;color:var(--ink);gap:1rem;user-select:none;transition:color .2s}
+.faq-q:hover{color:var(--gold)}
+.faq-ico{color:var(--gold);flex-shrink:0;transition:transform .3s;font-size:1rem}
+.faq-item.open .faq-ico{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-inner{padding:0 1.3rem 1rem;font-size:.81rem;font-weight:300;line-height:1.7;color:var(--muted)}
+.faq-item.open .faq-a{max-height:300px}
+
+/* FONDATRICE */
+#fondatrice{background:var(--white)}
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-frame-wrap{position:relative}
+.about-frame{border-radius:22px;overflow:hidden;aspect-ratio:4/5;position:relative;box-shadow:0 18px 56px rgba(13,13,13,.16)}
+.about-frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.about-frame-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(13,13,13,.68) 100%)}
+.af-chip{position:absolute;background:var(--white);border-radius:11px;padding:.85rem 1.05rem;box-shadow:0 5px 24px rgba(13,13,13,.1);border:1px solid rgba(201,168,76,.12)}
+.af-chip1{bottom:-16px;right:-16px;font-size:.75rem;font-weight:500;color:var(--ink)}
+.af-chip1 strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);line-height:1}
+.af-chip2{top:26px;left:-16px;display:flex;align-items:center;gap:.5rem;font-size:.7rem;white-space:nowrap}
+.pulse-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+.about-quote{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:300;font-style:italic;line-height:1.55;color:var(--ink);margin:1.4rem 0;padding-left:1.3rem;border-left:2px solid var(--gold)}
+.about-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.3rem}
+.atag{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.18);color:var(--ink);font-size:.7rem;padding:.28rem .78rem;border-radius:100px}
+
+/* PAGE COMMERCIAUX */
+#commerciaux{background:var(--ink);color:var(--cream);position:relative;overflow:hidden}
+#commerciaux::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,.09) 0%,transparent 60%);pointer-events:none}
+.comm-hero{text-align:center;padding:5rem 4vw 3rem;position:relative;z-index:1}
+.comm-hero .eyebrow{color:rgba(201,168,76,.7)}
+.comm-hero .stitle{color:var(--cream);max-width:none;font-size:clamp(2.2rem,4vw,4rem)}
+.comm-hero .sbody{color:rgba(247,244,239,.55);margin:0 auto}
+.comm-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.3rem;padding:0 4vw 3rem;position:relative;z-index:1}
+.comm-card{background:rgba(247,244,239,.04);border:1px solid rgba(247,244,239,.09);border-radius:16px;padding:1.8rem;transition:all .3s}
+.comm-card:hover{background:rgba(201,168,76,.07);border-color:rgba(201,168,76,.25);transform:translateY(-3px)}
+.comm-card-ico{font-size:2rem;margin-bottom:1rem}
+.comm-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--cream);margin-bottom:.6rem}
+.comm-card p{font-size:.8rem;font-weight:300;line-height:1.65;color:rgba(247,244,239,.55)}
+
+/* RENTE SECTION */
+.rente-section{background:rgba(201,168,76,.06);border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15);padding:3rem 4vw;position:relative;z-index:1}
+.rente-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1000px;margin:0 auto}
+.rente-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:var(--cream);margin-bottom:1rem;line-height:1.2}
+.rente-left h2 em{font-style:italic;color:var(--gold)}
+.rente-left p{font-size:.88rem;font-weight:300;line-height:1.75;color:rgba(247,244,239,.58)}
+.rente-right{display:flex;flex-direction:column;gap:.9rem}
+.rente-item{background:rgba(247,244,239,.05);border:1px solid rgba(247,244,239,.09);border-radius:12px;padding:1.1rem 1.3rem;display:flex;align-items:flex-start;gap:1rem}
+.rente-item-ico{font-size:1.3rem;flex-shrink:0}
+.rente-item h4{font-size:.85rem;font-weight:500;color:var(--cream);margin-bottom:.2rem}
+.rente-item p{font-size:.76rem;font-weight:300;color:rgba(247,244,239,.5);line-height:1.5}
+
+/* CALC RENTE */
+.calc-section{padding:3rem 4vw;position:relative;z-index:1}
+.calc-box{background:rgba(247,244,239,.04);border:1px solid rgba(247,244,239,.1);border-radius:20px;padding:2.5rem;max-width:700px;margin:0 auto;text-align:center}
+.calc-box h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--cream);margin-bottom:.5rem}
+.calc-box p{font-size:.82rem;color:rgba(247,244,239,.45);margin-bottom:2rem}
+.calc-slider-wrap{margin:1.5rem 0;text-align:left}
+.calc-slider-wrap label{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(247,244,239,.45);display:block;margin-bottom:.6rem}
+input[type=range]{width:100%;accent-color:var(--gold);height:4px;border-radius:2px}
+.calc-result{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:1.5rem}
+.cr-item{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.18);border-radius:10px;padding:1.1rem}
+.cr-val{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--gold);display:block}
+.cr-label{font-size:.68rem;color:rgba(247,244,239,.45);letter-spacing:.06em;text-transform:uppercase;margin-top:.25rem}
+
+/* COMM JOIN */
+.comm-join{padding:2rem 4vw 5rem;position:relative;z-index:1;text-align:center}
+.comm-join h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.5rem);font-weight:300;color:var(--cream);margin-bottom:.8rem}
+.comm-join h2 em{font-style:italic;color:var(--gold)}
+.comm-join p{font-size:.88rem;color:rgba(247,244,239,.5);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+.comm-join-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+
+/* CONTACT */
+#contact{background:var(--cream)}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-methods{display:flex;flex-direction:column;gap:.8rem;margin-top:1.8rem}
+.cmethod{display:flex;align-items:center;gap:.9rem;background:var(--white);border:1px solid rgba(201,168,76,.12);border-radius:12px;padding:.9rem 1.2rem;text-decoration:none;color:var(--ink);transition:all .3s}
+.cmethod:hover{background:rgba(201,168,76,.07);border-color:rgba(201,168,76,.3);transform:translateX(4px)}
+.cm-ico{font-size:1.2rem;width:32px;flex-shrink:0;text-align:center}
+.cm-lbl{font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:500;display:block}
+.cm-val{font-size:.81rem;font-weight:300;color:var(--ink);display:block;margin-top:.1rem}
+.contact-form{background:var(--white);border:1px solid rgba(201,168,76,.12);border-radius:18px;padding:2rem;box-shadow:0 4px 24px rgba(13,13,13,.05)}
+.cf-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--ink);margin-bottom:1.4rem}
+.cf-group{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.9rem}
+.cf-group label{font-size:.67rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.cf-group input,.cf-group textarea,.cf-group select{background:var(--cream);border:1px solid rgba(201,168,76,.15);border-radius:9px;padding:.7rem .9rem;font-family:'DM Sans',sans-serif;font-size:.83rem;color:var(--ink);outline:none;transition:border-color .2s;width:100%}
+.cf-group input:focus,.cf-group textarea:focus,.cf-group select:focus{border-color:var(--gold)}
+.cf-group textarea{resize:vertical;min-height:85px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.cf-btn{background:var(--ink);color:var(--cream);border:none;padding:.85rem;border-radius:100px;font-size:.84rem;font-weight:600;cursor:pointer;width:100%;margin-top:.4rem;transition:all .25s;font-family:'DM Sans',sans-serif}
+.cf-btn:hover{background:var(--gold);color:var(--ink);transform:translateY(-2px)}
+.cf-note{font-size:.67rem;color:var(--muted);text-align:center;margin-top:.7rem}
+
+footer{background:var(--ink);padding:1.7rem 4vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .logo{color:rgba(247,244,239,.6)}
+footer p{font-size:.7rem;color:rgba(247,244,239,.25)}
+.footer-siret{font-size:.65rem;color:rgba(247,244,239,.2);text-align:center;padding:.5rem 4vw;background:var(--ink)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr;padding-top:7rem}
+  .hero-img{height:320px}
+  .agent-featured{grid-template-columns:1fr}
+  .agents-grid{grid-template-columns:1fr}
+  .proc-layout,.about-layout,.faq-layout,.contact-layout,.rente-inner{grid-template-columns:1fr;gap:3rem}
+  .price-grid,.comm-grid,.temo-grid,.modal-grid,.calc-result{grid-template-columns:1fr}
+  .proc-vis{position:relative;top:auto}
+  .stats-bar{flex-wrap:wrap;gap:1.5rem}
+  nav .nav-links{display:none}
+  footer{flex-direction:column;text-align:center}
+  .cf-row{grid-template-columns:1fr}
+  .stack-intro{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">MGE <span>Consulting</span></a>
+  <ul class="nav-links">
+    <li><a href="#stack">Stack IA</a></li>
+    <li><a href="#agents">Agents</a></li>
+    <li><a href="#process">Méthode</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#fondatrice">À propos</a></li>
+    <li><a href="#commerciaux" class="nav-comm">💼 Devenir apporteur</a></li>
+    <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-left">
+    <div class="hero-badge"><div class="badge-dot"></div>Agents IA • PME & Indépendants • Île-de-France</div>
+    <h1>Votre entreprise,<br>pilotée par une <em>IA qui<br>travaille pour vous.</em></h1>
+    <p class="hero-sub">Des agents IA sur-mesure qui gèrent votre communication, vos relances commerciales, votre prospection — 24h/24, sans erreur, sans oubli. Pendant que vous vous concentrez sur l'essentiel.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-dark">Parlons de votre projet →</a>
+      <a href="#agents" class="btn btn-outline">Voir les agents IA</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e 0%,#0d0d0d 50%,#1a1a1a 100%);display:flex;align-items:center;justify-content:center"><span style='font-size:5rem'>🤖</span></div>
+      <div class="hero-img-overlay"></div>
+      <div class="hero-img-info">
+        <span class="hii-label">⚡ Agents actifs en ce moment</span>
+        <div class="hii-tags">
+          <span class="hii-tag live">Community Manager IA</span>
+          <span class="hii-tag live">Relance Commerciale IA</span>
+          <span class="hii-tag">+ 11 agents disponibles</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Make.com</span><span class="sep">·</span><span>Claude AI</span><span class="sep">·</span><span>Claude Code</span><span class="sep">·</span><span>GPT-4o</span><span class="sep">·</span><span>Supabase</span><span class="sep">·</span><span>Buffer</span><span class="sep">·</span><span>Phantombuster</span><span class="sep">·</span><span>Nano</span><span class="sep">·</span><span>Blinks</span><span class="sep">·</span><span>Anthropic API</span><span class="sep">·</span><span>SeaArt AI</span><span class="sep">·</span><span>Gmail API</span><span class="sep">·</span><span>Google Drive</span><span class="sep">·</span><span>Midjourney</span><span class="sep">·</span><span>ElevenLabs</span><span class="sep">·</span><span>Kling AI</span><span class="sep">·</span><span>Leonardo AI</span><span class="sep">·</span><span>Make.com</span><span class="sep">·</span><span>Claude AI</span><span class="sep">·</span><span>Claude Code</span><span class="sep">·</span><span>GPT-4o</span><span class="sep">·</span><span>Supabase</span><span class="sep">·</span><span>Buffer</span><span class="sep">·</span><span>Phantombuster</span><span class="sep">·</span><span>Nano</span><span class="sep">·</span><span>Blinks</span><span class="sep">·</span><span>Anthropic API</span><span class="sep">·</span><span>SeaArt AI</span><span class="sep">·</span><span>Gmail API</span><span class="sep">·</span><span>Google Drive</span><span class="sep">·</span><span>Midjourney</span><span class="sep">·</span><span>ElevenLabs</span><span class="sep">·</span><span>Kling AI</span><span class="sep">·</span><span>Leonardo AI</span><span class="sep">·</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="n">13</span><span class="l">Agents disponibles</span></div>
+  <div class="stat-item"><span class="n">5 j</span><span class="l">Déploiement moyen</span></div>
+  <div class="stat-item"><span class="n">100%</span><span class="l">Sur-mesure métier</span></div>
+  <div class="stat-item"><span class="n">24/7</span><span class="l">Disponibilité agent</span></div>
+</div>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="reveal">
+    <div class="eyebrow">Stack Technologique</div>
+    <h2 class="stitle">Les outils IA les plus puissants,<br><em>maîtrisés de A à Z</em></h2>
+    <p class="sbody">Je n'utilise pas des outils no-code basiques. J'assemble les technologies les plus avancées du marché pour construire des agents robustes, fiables et évolutifs.</p>
+  </div>
+  <div class="stack-intro reveal">
+    <div class="stack-img">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#0d0d0d,#1a1a2e);display:flex;align-items:center;justify-content:center"><span style='font-size:3rem'>📊</span></div>
+    </div>
+    <div class="stack-points">
+      <div class="sp"><div class="sp-num">1</div><div class="sp-text"><h5>Des vraies APIs, pas du no-code limité</h5><p>Chaque agent appelle directement les APIs Anthropic, OpenAI, Google — sans intermédiaire qui ralentit ou restreint les possibilités.</p></div></div>
+      <div class="sp"><div class="sp-num">2</div><div class="sp-text"><h5>Une base de données qui trace tout</h5><p>Supabase enregistre chaque action de l'agent. Historique complet, logs consultables, alertes automatiques en cas d'anomalie.</p></div></div>
+      <div class="sp"><div class="sp-num">3</div><div class="sp-text"><h5>Claude Code pour tout construire sur-mesure</h5><p>Je développe avec Claude Code — agents personnalisés, scripts métier, débogage ultra-rapide. Livraison 3x plus rapide qu'en dev classique.</p></div></div>
+      <div class="sp"><div class="sp-num">4</div><div class="sp-text"><h5>Outils créatifs IA pour le contenu visuel</h5><p>Midjourney, SeaArt, Leonardo AI, ElevenLabs, Kling AI — vos agents créent aussi du contenu visuel et audio de qualité professionnelle.</p></div></div>
+    </div>
+  </div>
+  <div class="tools-grid">
+    <div class="tool reveal"><div class="tool-ico">🤖</div><div class="tool-name">Claude AI</div><div class="tool-desc">Raisonnement avancé, analyse complexe</div><span class="tbadge tb-ia">IA Principale</span></div>
+    <div class="tool reveal"><div class="tool-ico">💻</div><div class="tool-name">Claude Code</div><div class="tool-desc">Dev agents, scripts sur-mesure</div><span class="tbadge tb-ia">Dev IA</span></div>
+    <div class="tool reveal"><div class="tool-ico">🧠</div><div class="tool-name">GPT-4o</div><div class="tool-desc">Génération contenu, vision</div><span class="tbadge tb-ia">IA Créative</span></div>
+    <div class="tool reveal"><div class="tool-ico">⚗️</div><div class="tool-name">Anthropic API</div><div class="tool-desc">Accès direct modèles Anthropic</div><span class="tbadge tb-ia">API</span></div>
+    <div class="tool reveal"><div class="tool-ico">⚙️</div><div class="tool-name">Make.com</div><div class="tool-desc">Orchestration workflows</div><span class="tbadge tb-auto">Automatisation</span></div>
+    <div class="tool reveal"><div class="tool-ico">🔷</div><div class="tool-name">Nano</div><div class="tool-desc">Agents légers ultra-rapides</div><span class="tbadge tb-auto">Agents</span></div>
+    <div class="tool reveal"><div class="tool-ico">⚡</div><div class="tool-name">Blinks</div><div class="tool-desc">Actions automatisées one-click</div><span class="tbadge tb-auto">Automatisation</span></div>
+    <div class="tool reveal"><div class="tool-ico">🗄️</div><div class="tool-name">Supabase</div><div class="tool-desc">Base de données temps réel</div><span class="tbadge tb-data">Base de données</span></div>
+    <div class="tool reveal"><div class="tool-ico">📣</div><div class="tool-name">Buffer</div><div class="tool-desc">Publication réseaux sociaux auto</div><span class="tbadge tb-dist">Distribution</span></div>
+    <div class="tool reveal"><div class="tool-ico">👻</div><div class="tool-name">Phantombuster</div><div class="tool-desc">Scraping & extraction leads</div><span class="tbadge tb-auto">Prospection</span></div>
+    <div class="tool reveal"><div class="tool-ico">📧</div><div class="tool-name">Gmail API</div><div class="tool-desc">Emails & relances automatiques</div><span class="tbadge tb-dist">Email</span></div>
+    <div class="tool reveal"><div class="tool-ico">🎨</div><div class="tool-name">Midjourney</div><div class="tool-desc">Génération images premium</div><span class="tbadge tb-create">Création</span></div>
+    <div class="tool reveal"><div class="tool-ico">🌊</div><div class="tool-name">SeaArt AI</div><div class="tool-desc">Illustrations & visuels IA</div><span class="tbadge tb-create">Création</span></div>
+    <div class="tool reveal"><div class="tool-ico">🦁</div><div class="tool-name">Leonardo AI</div><div class="tool-desc">Visuels produit, photorealistic</div><span class="tbadge tb-create">Création</span></div>
+    <div class="tool reveal"><div class="tool-ico">🎙️</div><div class="tool-name">ElevenLabs</div><div class="tool-desc">Voix IA, podcasts, narration</div><span class="tbadge tb-create">Audio</span></div>
+    <div class="tool reveal"><div class="tool-ico">🎬</div><div class="tool-name">Kling AI</div><div class="tool-desc">Génération vidéo IA</div><span class="tbadge tb-create">Vidéo</span></div>
+  </div>
+  <div class="stack-cta-bar reveal">
+    <div class="scb"><h3>Chaque agent est un <em style="color:var(--gold)">assemblage précis</em> de ces outils,<br>pensé pour votre métier spécifique.</h3><p>Pas de template. Pas de copier-coller. Tout construit et testé pour vous.</p></div>
+    <a href="#contact" class="btn btn-gold">Parler de mon projet →</a>
+  </div>
+</section>
+
+<!-- AGENTS -->
+<section id="agents">
+  <div class="agents-header reveal">
+    <div>
+      <div class="eyebrow">Catalogue complet — 13 agents IA</div>
+      <h2 class="stitle">Un agent pour chaque <em>besoin métier</em></h2>
+    </div>
+    <button onclick="document.getElementById('modal-catalogue').classList.add('open')" class="btn btn-outline">📋 Voir le catalogue complet</button>
+  </div>
+
+  <!-- AGENT STAR - COMMUNITY MANAGER -->
+  <div class="agent-featured reveal">
+    <div class="af-left">
+      <div class="live-badge">En production</div>
+      <h3>Agent 1 —<br><em>Community Manager IA</em></h3>
+      <p>Publie automatiquement sur vos réseaux sociaux 3×/semaine. Récupère vos photos depuis Google Drive, génère la légende et les hashtags via GPT-4o, affine le ton avec Claude AI, puis planifie et publie via Buffer — sans que vous ayez à toucher quoi que ce soit. Actuellement actif chez Regus Brunoy.</p>
+      <div class="af-tools">
+        <span class="af-tool">Make.com</span><span class="af-tool">GPT-4o</span><span class="af-tool">Claude AI</span><span class="af-tool">Google Drive</span><span class="af-tool">Buffer</span><span class="af-tool">Supabase</span>
+      </div>
+      <div class="af-price-block">
+        <div class="setup">1 200 <span>€ setup</span></div>
+        <div class="mensuel">+ 350 €/mois · Maintenance & évolution incluses</div>
+      </div>
+    </div>
+    <div class="af-right">
+      <div class="af-feature"><div class="ico">📸</div><div><h5>Récupération automatique des médias</h5><p>L'agent récupère vos nouvelles photos dans Google Drive dès qu'elles sont déposées, sans action de votre part.</p></div></div>
+      <div class="af-feature"><div class="ico">🧠</div><div><h5>Génération de contenu IA dual-modèle</h5><p>GPT-4o crée la légende et les hashtags, Claude AI affine le ton selon votre charte éditoriale.</p></div></div>
+      <div class="af-feature"><div class="ico">📅</div><div><h5>Publication planifiée Lun / Mer / Ven à 8h</h5><p>Buffer programme les posts aux meilleurs créneaux. Vous recevez un email récap chaque semaine.</p></div></div>
+      <div class="af-feature"><div class="ico">📊</div><div><h5>Logs & traçabilité complète</h5><p>Chaque publication est enregistrée dans Supabase avec date, contenu et statut. Historique consultable à tout moment.</p></div></div>
+    </div>
+  </div>
+
+  <!-- GRID AUTRES AGENTS -->
+  <div class="agents-grid">
+    <div class="ac reveal">
+      <div class="ac-head"><div class="ac-ico">📩</div><span class="ac-status-badge status-available">Disponible</span></div>
+      <div class="ac-name">Relance Commerciale IA</div>
+      <p class="ac-desc">Relances automatiques à J+3, J+7 et J+15 après chaque devis envoyé. Emails personnalisés par Claude AI selon le profil client. Zéro oubli, pipeline toujours vivant.</p>
+      <div class="ac-tools-row"><span class="ac-tool">Make.com</span><span class="ac-tool">Claude AI</span><span class="ac-tool">Gmail API</span><span class="ac-tool">Supabase</span></div>
+      <div class="ac-price"><div class="ac-price-setup">1 000 €</div><div class="ac-price-mo">+ 300 €/mois</div></div>
+    </div>
+    <div class="ac reveal">
+      <div class="ac-head"><div class="ac-ico">🎯</div><span class="ac-status-badge status-available">Disponible</span></div>
+      <div class="ac-name">Lead Gen & Prospection IA</div>
+      <p class="ac-desc">Identifie et contacte automatiquement des prospects qualifiés. Scraping ciblé, enrichissement de données, séquences personnalisées par secteur d'activité.</p>
+      <div class="ac-tools-row"><span class="ac-tool">Phantombuster</span><span class="ac-tool">Make.com</span><span class="ac-tool">GPT-4o</span><span class="ac-tool">Gmail</span></div>
+      <div class="ac-price"><div class="ac-price-setup">1 800 €</div><div class="ac-price-mo">+ 500 €/mois</div></div>
+    </div>
+    <div class="ac reveal">
+      <div class="ac-head"><div class="ac-ico">💬</div><span class="ac-status-badge status-available">Disponible</span></div>
+      <div class="ac-name">Service Client IA 24h/24</div>
+      <p class="ac-desc">Répond à vos clients à toute heure. Formé sur vos données, votre ton, vos produits. Escalade intelligente vers vous pour les cas complexes uniquement.</p>
+      <div class="ac-tools-row"><span class="ac-tool">Claude AI</span><span class="ac-tool">Make.com</span><span class="ac-tool">Gmail API</span><span class="ac-tool">Supabase</span></div>
+      <div class="ac-price"><div class="ac-price-setup">1 400 €</div><div class="ac-price-mo">+ 400 €/mois</div></div>
+    </div>
+    <div class="ac reveal">
+      <div class="ac-head"><div class="ac-ico">📊</div><span class="ac-status-badge status-available">Disponible</span></div>
+      <div class="ac-name">Rapport & Analyse IA</div>
+      <p class="ac-desc">Génère vos rapports d'activité automatiquement chaque semaine. KPIs, synthèses, alertes intelligentes — livrés dans votre boîte mail sans saisie manuelle.</p>
+      <div class="ac-tools-row"><span class="ac-tool">Claude Code</span><span class="ac-tool">Supabase</span><span class="ac-tool">Make.com</span><span class="ac-tool">Gmail</span></div>
+      <div class="ac-price"><div class="ac-price-setup">900 €</div><div class="ac-price-mo">+ 250 €/mois</div></div>
+    </div>
+    <div class="ac reveal">
+      <div class="ac-head"><div class="ac-ico">📅</div><span class="ac-status-badge status-available">Disponible</span></div>
+      <div class="ac-name">Agenda & Prise de RDV IA</div>
+      <p class="ac-desc">Gère votre calendrier, confirme les rendez-vous, envoie des rappels automatiques à vos clients 24h avant. Intégré à Google Calendar et Gmail.</p>
+      <div class="ac-tools-row"><span class="ac-tool">Make.com</span><span class="ac-tool">Google Calendar</span><span class="ac-tool">Gmail</span><span class="ac-tool">Claude AI</span></div>
+      <div class="ac-price"><div class="ac-price-setup">800 €</div><div class="ac-price-mo">+ 200 €/mois</div></div>
+    </div>
+    <div class="ac reveal" style="background:var(--ink);border-color:rgba(201,168,76,.25)">
+      <div class="ac-ico" style="background:rgba(201,168,76,.15)">✨</div>
+      <div class="ac-name" style="color:var(--cream)">+ 8 agents disponibles</div>
+      <p class="ac-desc" style="color:rgba(247,244,239,.55)">Facturation auto, onboarding clients, veille concurrentielle, recrutement IA, newsletter automatisée, gestion des avis, création contenu visuel…</p>
+      <button onclick="document.getElementById('modal-catalogue').classList.add('open')" class="btn btn-gold" style="margin-top:1rem;font-size:.78rem;padding:.6rem 1.3rem">Voir le catalogue complet →</button>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL CATALOGUE COMPLET -->
+<div id="modal-catalogue" class="modal-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('modal-catalogue').classList.remove('open')">✕</button>
+    <div class="eyebrow">Catalogue complet</div>
+    <h2 class="stitle">Les 13 <em>agents MGE Consulting</em></h2>
+    <p class="modal-sub">Chaque agent est configuré sur-mesure pour votre activité. Tarifs indicatifs — devis personnalisé sur demande.</p>
+    <div class="modal-grid">
+      <div class="mc"><div class="mc-head"><span class="mc-ico">📣</span><div class="mc-name">Community Manager IA</div></div><p class="mc-desc">Publication auto 3×/sem sur vos réseaux. GPT-4o + Claude AI + Buffer.</p><div class="mc-price">1 200€ setup · 350€/mois ✅ EN PRODUCTION</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">📩</span><div class="mc-name">Relance Commerciale IA</div></div><p class="mc-desc">Relances J+3/J+7/J+15 après devis. Emails personnalisés Claude AI.</p><div class="mc-price">1 000€ setup · 300€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">🎯</span><div class="mc-name">Lead Gen & Prospection IA</div></div><p class="mc-desc">Scraping + enrichissement + séquences contacts par secteur.</p><div class="mc-price">1 800€ setup · 500€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">💬</span><div class="mc-name">Service Client IA 24h/24</div></div><p class="mc-desc">Réponses automatiques formées sur vos données & ton de marque.</p><div class="mc-price">1 400€ setup · 400€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">📊</span><div class="mc-name">Rapport & Analyse IA</div></div><p class="mc-desc">KPIs, synthèses et alertes livrés par email chaque semaine.</p><div class="mc-price">900€ setup · 250€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">📅</span><div class="mc-name">Agenda & RDV IA</div></div><p class="mc-desc">Gestion calendrier, confirmations, rappels clients automatiques.</p><div class="mc-price">800€ setup · 200€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">🧾</span><div class="mc-name">Facturation Auto IA</div></div><p class="mc-desc">Génération et envoi automatique de factures après chaque prestation.</p><div class="mc-price">700€ setup · 180€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">🎓</span><div class="mc-name">Onboarding Clients IA</div></div><p class="mc-desc">Séquence d'accueil automatisée pour chaque nouveau client signé.</p><div class="mc-price">900€ setup · 220€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">🔍</span><div class="mc-name">Veille Concurrentielle IA</div></div><p class="mc-desc">Monitore vos concurrents et vous livre un rapport hebdo.</p><div class="mc-price">1 000€ setup · 280€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">👔</span><div class="mc-name">Recrutement IA</div></div><p class="mc-desc">Tri de CV, pré-qualification automatique, planification entretiens.</p><div class="mc-price">1 800€ setup · 500€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">📰</span><div class="mc-name">Newsletter Automatisée IA</div></div><p class="mc-desc">Rédige et envoie votre newsletter mensuelle sans effort manuel.</p><div class="mc-price">600€ setup · 150€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">⭐</span><div class="mc-name">Gestion des Avis IA</div></div><p class="mc-desc">Réponse automatique aux avis Google, TripAdvisor, Trustpilot.</p><div class="mc-price">700€ setup · 180€/mois</div></div>
+      <div class="mc"><div class="mc-head"><span class="mc-ico">🎨</span><div class="mc-name">Création Contenu Visuel IA</div></div><p class="mc-desc">Génère visuels, photos produit et illustrations via Midjourney + Leonardo AI.</p><div class="mc-price">Sur devis</div></div>
+    </div>
+    <div style="text-align:center;margin-top:2rem"><a href="#contact" class="btn btn-dark" onclick="document.getElementById('modal-catalogue').classList.remove('open')">Demander un devis personnalisé →</a></div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="reveal">
+    <div class="eyebrow">Méthode</div>
+    <h2 class="stitle">De zéro à votre agent actif<br><em>en quelques jours</em></h2>
+    <p class="sbody">Pas besoin de savoir coder. Je gère tout de A à Z — vous n'avez qu'à valider.</p>
+  </div>
+  <div class="proc-layout">
+    <div class="steps reveal">
+      <div class="step"><div class="step-n">1</div><div class="step-c"><h4>Audit de vos besoins</h4><p>On identifie ensemble les tâches qui vous coûtent du temps. On choisit le ou les agents les plus adaptés à votre activité réelle.</p></div></div>
+      <div class="step"><div class="step-n">2</div><div class="step-c"><h4>Configuration sur-mesure</h4><p>Je configure l'agent selon votre identité : votre ton, vos données, vos outils existants (Gmail, Drive, réseaux, CRM…). Rien de générique.</p></div></div>
+      <div class="step"><div class="step-n">3</div><div class="step-c"><h4>Test & validation ensemble</h4><p>L'agent tourne en mode test. Vous voyez chaque sortie, validez, on ajuste jusqu'à ce que ce soit parfait pour vous.</p></div></div>
+      <div class="step"><div class="step-n">4</div><div class="step-c"><h4>Lancement & suivi mensuel</h4><p>Mise en production, formation rapide (moins d'1h), suivi mensuel inclus. Votre agent travaille — vous supervisez.</p></div></div>
+    </div>
+    <div class="proc-vis reveal">
+      <div class="proc-vis-img">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#0d0d0d,#1a1a2e);display:flex;align-items:center;justify-content:center"><span style='font-size:3rem'>⚙️</span></div>
+      </div>
+      <div class="proc-vis-body">
+        <div class="pv-label">Exemple live — Agent Community Manager</div>
+        <div class="pv-flow">
+          <div class="pv-n"><span>📸</span> Récupère vos photos (Google Drive)</div>
+          <div class="pv-arr">↓</div>
+          <div class="pv-n"><span>🧠</span> GPT-4o génère légende + hashtags</div>
+          <div class="pv-arr">↓</div>
+          <div class="pv-n"><span>🤖</span> Claude AI affine le ton de marque</div>
+          <div class="pv-arr">↓</div>
+          <div class="pv-n"><span>🗄️</span> Supabase enregistre et logge</div>
+          <div class="pv-arr">↓</div>
+          <div class="pv-n"><span>📅</span> Buffer planifie la publication</div>
+          <div class="pv-arr">↓</div>
+          <div class="pv-n pv-ok"><span>✅</span> Publication Lun / Mer / Ven 8h00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs">
+  <div class="tarifs-intro reveal">
+    <div class="eyebrow">Tarifs réels</div>
+    <h2 class="stitle" style="max-width:none">Des prix clairs, <em>sans surprise</em></h2>
+    <p class="sbody" style="margin:0 auto">Chaque agent a son propre tarif. Ci-dessous les formules les plus demandées — tous les prix du catalogue sont affichés dans chaque carte agent.</p>
+  </div>
+  <div class="price-grid">
+    <div class="pc reveal">
+      <div class="pc-tier">Agent Solo</div>
+      <div class="pc-name">Community Manager IA</div>
+      <div class="pc-setup">1 200 <sub>€ setup</sub></div>
+      <div class="pc-mensuel">+ 350 €/mois · maintenance & évolution incluses</div>
+      <ul class="pc-feats">
+        <li>Publication auto 3×/semaine</li>
+        <li>GPT-4o + Claude AI pour le contenu</li>
+        <li>Connexion Google Drive + Buffer</li>
+        <li>Logs Supabase + rapport hebdo</li>
+        <li>Formation & prise en main (1h)</li>
+        <li>Support prioritaire 24h</li>
+      </ul>
+      <a href="#contact" class="pc-cta">Démarrer cet agent →</a>
+    </div>
+    <div class="pc hl reveal">
+      <div class="pc-badge">⭐ Le plus demandé</div>
+      <div class="pc-tier">Agent Solo</div>
+      <div class="pc-name" style="color:var(--cream)">Relance Commerciale IA</div>
+      <div class="pc-setup">1 000 <sub>€ setup</sub></div>
+      <div class="pc-mensuel">+ 300 €/mois · maintenance & évolution incluses</div>
+      <ul class="pc-feats">
+        <li>Relances J+3 / J+7 / J+15 automatiques</li>
+        <li>Emails personnalisés par Claude AI</li>
+        <li>Connexion Gmail + Supabase</li>
+        <li>Tableau de suivi des devis inclus</li>
+        <li>Alertes si devis non répondu J+20</li>
+        <li>Support prioritaire 24h</li>
+      </ul>
+      <a href="#contact" class="pc-cta">Démarrer cet agent →</a>
+    </div>
+    <div class="pc reveal">
+      <div class="pc-tier">Pack Multi-Agents</div>
+      <div class="pc-name">Écosystème IA complet</div>
+      <div class="pc-setup">Sur <sub>devis</sub></div>
+      <div class="pc-mensuel">3 agents ou plus · tarif préférentiel</div>
+      <ul class="pc-feats">
+        <li>Sélection libre parmi 13 agents</li>
+        <li>Tarif réduit négocié ensemble</li>
+        <li>Architecture IA complète</li>
+        <li>Accompagnement stratégique inclus</li>
+        <li>Formation de votre équipe</li>
+        <li>SLA & garantie de service</li>
+      </ul>
+      <a href="#contact" class="pc-cta">Demander un devis →</a>
+    </div>
+  </div>
+  <p class="tarifs-note reveal">💡 <strong>Exemple concret :</strong> l'agent Relance Commerciale à 300€/mois transforme vos devis sans réponse en clients. En moyenne, nos clients récupèrent 2 à 3 ventes supplémentaires par mois grâce aux relances — bien au-dessus du coût de l'agent.</p>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section id="temoignages">
+  <div class="reveal" style="text-align:center">
+    <div class="eyebrow">Témoignages</div>
+    <h2 class="stitle" style="max-width:none">Ce que disent <em>ceux qui ont franchi le pas</em></h2>
+  </div>
+  <div class="temo-grid">
+    <div class="tc reveal"><div class="tc-stars">★★★★★</div><p class="tc-text">"Depuis que l'agent gère mes réseaux, je n'y touche plus. Les publications sont régulières, le ton est parfait. Je me concentre enfin sur mon cœur de métier."</p><div class="tc-author"><div class="tc-av">DC</div><div><div class="tc-name">Diane Camille</div><div class="tc-role">Gérante — Regus Brunoy / Stop & Work</div></div></div></div>
+    <div class="tc reveal"><div class="tc-stars">★★★★★</div><p class="tc-text">"L'agent de relance a transformé mon taux de conversion. Mes devis ne restent plus sans réponse. C'est comme avoir un commercial qui ne dort jamais."</p><div class="tc-author"><div class="tc-av">JM</div><div><div class="tc-name">Jean-Marc L.</div><div class="tc-role">Directeur commercial — PME BTP, Essonne</div></div></div></div>
+    <div class="tc reveal"><div class="tc-stars">★★★★★</div><p class="tc-text">"Salyna a compris mon activité en 20 minutes. L'agent est calé sur mon secteur, mon vocabulaire, mes clients. Le niveau de personnalisation est bluffant."</p><div class="tc-author"><div class="tc-av">SP</div><div><div class="tc-name">Sophie P.</div><div class="tc-role">Consultante RH indépendante — Paris</div></div></div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-layout">
+    <div class="reveal">
+      <div class="eyebrow">Questions fréquentes</div>
+      <h2 class="stitle">Tout ce que vous<br>voulez <em>savoir</em></h2>
+      <p class="sbody">Une question pas encore là ? Je réponds sous 24h.</p>
+      <a href="#contact" class="btn btn-dark" style="margin-top:2rem;display:inline-block">Poser ma question →</a>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">Est-ce que je dois savoir coder ? <span class="faq-ico">+</span></div><div class="faq-a"><div class="faq-a-inner">Absolument pas. Je gère toute la partie technique de A à Z avec Claude Code. Vous n'avez qu'à décrire votre activité, valider les tests et superviser l'agent une fois lancé.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">En combien de temps mon agent est opérationnel ? <span class="faq-ico">+</span></div><div class="faq-a"><div class="faq-a-inner">Entre 3 et 7 jours ouvrés selon la complexité. L'agent Community Manager et Relance Commerciale sont souvent prêts en 4-5 jours. Les agents plus complexes peuvent prendre jusqu'à 10 jours.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">L'agent se connecte à mes outils existants ? <span class="faq-ico">+</span></div><div class="faq-a"><div class="faq-a-inner">Oui. Je connecte l'agent à Gmail, Google Drive, votre CRM, vos réseaux sociaux, votre logiciel de facturation… Si un outil dispose d'une API ou d'un webhook, on peut le connecter via Make.com.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">Mes données sont-elles en sécurité ? <span class="faq-ico">+</span></div><div class="faq-a"><div class="faq-a-inner">Vos données restent dans votre environnement : votre Supabase, votre Google Drive, vos APIs. Je n'ai pas accès à vos données clients en dehors de la configuration. Tout est documenté et transparent.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">Que se passe-t-il si l'agent fait une erreur ? <span class="faq-ico">+</span></div><div class="faq-a"><div class="faq-a-inner">Chaque agent est testé en conditions réelles avant mise en production. Le suivi mensuel permet de détecter toute anomalie. Je réponds à tout problème signalé sous 24h.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tFaq(this)">Intervenez-vous partout en France ? <span class="faq-ico">+</span></div><div class="faq-a"><div class="faq-a-inner">Tout se fait à distance — partout en France et à l'international. Je suis basée en Île-de-France (Brunoy 91) et peux me déplacer si vous êtes en région parisienne.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FONDATRICE -->
+<section id="fondatrice">
+  <div class="about-layout">
+    <div class="about-frame-wrap reveal">
+      <div class="about-frame">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e,#0d0d0d);display:flex;align-items:center;justify-content:center"><span style='font-size:5rem'>✨</span></div>
+        <div class="about-frame-overlay"></div>
+      </div>
+      <div class="af-chip af-chip1"><strong>MGE</strong>Consulting</div>
+      <div class="af-chip af-chip2"><div class="pulse-dot"></div>Disponible Île-de-France</div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">La fondatrice</div>
+      <h2 class="stitle">Salyna Chahboune —<br><em>Fondatrice & Experte IA</em></h2>
+      <blockquote class="about-quote">"J'ai appris l'IA sur le terrain, en construisant des outils réels pour de vrais clients. Pas depuis un livre — depuis la pratique, jour après jour."</blockquote>
+      <p class="sbody">Fondatrice de MGE Consulting, je conçois et déploie des agents IA pour PME et indépendants. Auto-entrepreneuse passionnée, maîtrise complète de la stack IA la plus avancée du marché : Claude AI, Claude Code, GPT-4o, Make.com, Supabase, Midjourney, ElevenLabs et bien d'autres.</p>
+      <p class="sbody" style="margin-top:1rem">Mon approche : comprendre votre métier avant de toucher au code. Chaque agent est pensé pour votre réalité opérationnelle, pas pour une démo.</p>
+      <div class="about-tags">
+        <span class="atag">Claude AI</span><span class="atag">Claude Code</span><span class="atag">GPT-4o</span><span class="atag">Make.com</span><span class="atag">Supabase</span><span class="atag">Midjourney</span><span class="atag">ElevenLabs</span><span class="atag">Phantombuster</span><span class="atag">SeaArt AI</span><span class="atag">Leonardo AI</span>
+      </div>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="#contact" class="btn btn-dark">Travailler avec moi →</a>
+        <a href="#commerciaux" class="btn btn-outline">💼 Devenir apporteur d'affaires</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE COMMERCIAUX -->
+<section id="commerciaux">
+  <div class="comm-hero reveal">
+    <div class="eyebrow">Partenaires & Apporteurs d'affaires</div>
+    <h2 class="stitle">Construisez une <em>rente à vie</em><br>en parlant de ce qui existe déjà.</h2>
+    <p class="sbody">Vous connaissez des PME, des indépendants, des gérants qui perdent du temps sur des tâches répétitives ? Parlez-leur de MGE Consulting. Chaque client que vous apportez vous génère une commission mensuelle récurrente — à vie, tant que le client reste.</p>
+  </div>
+
+  <div class="comm-grid">
+    <div class="comm-card reveal">
+      <div class="comm-card-ico">🔄</div>
+      <h3>Un revenu qui se renouvelle chaque mois</h3>
+      <p>Ce n'est pas une commission one-shot. Chaque mois que votre client paie son abonnement, vous touchez votre part. Un client = un flux mensuel qui dure.</p>
+    </div>
+    <div class="comm-card reveal">
+      <div class="comm-card-ico">🧩</div>
+      <h3>Zéro technique à maîtriser</h3>
+      <p>Vous n'avez pas besoin de comprendre Make.com ou Supabase. Votre rôle : identifier le besoin, faire la mise en relation. Je m'occupe de tout le reste.</p>
+    </div>
+    <div class="comm-card reveal">
+      <div class="comm-card-ico">📈</div>
+      <h3>Un portefeuille qui grandit seul</h3>
+      <p>Plus vous apportez de clients, plus vos revenus mensuels s'accumulent. 5 clients actifs = 5 commissions chaque mois. Sans effort supplémentaire.</p>
+    </div>
+    <div class="comm-card reveal">
+      <div class="comm-card-ico">🤝</div>
+      <h3>Un partenariat transparent</h3>
+      <p>Contrat d'apporteur d'affaires formel, suivi de vos clients en temps réel, paiements ponctuels. Aucune zone grise, tout est écrit noir sur blanc.</p>
+    </div>
+    <div class="comm-card reveal">
+      <div class="comm-card-ico">🎯</div>
+      <h3>Vos clients, vos secteurs</h3>
+      <p>Vous êtes dans le BTP, la santé, l'immobilier, la restauration ? Parfait. Les agents IA s'adaptent à tous les secteurs. Votre réseau existant est votre plus-value.</p>
+    </div>
+    <div class="comm-card reveal">
+      <div class="comm-card-ico">🚀</div>
+      <h3>Commencez dès maintenant</h3>
+      <p>Pas de formation longue, pas de stock, pas d'investissement. Un simple échange avec moi et vous pouvez présenter MGE Consulting dès demain à votre réseau.</p>
+    </div>
+  </div>
+
+  <!-- RENTE EXPLIQUÉE -->
+  <div class="rente-section">
+    <div class="rente-inner">
+      <div class="rente-left reveal">
+        <h2>Le modèle de la <em>rente récurrente</em> expliqué en clair</h2>
+        <p>Contrairement à une vente classique où vous touchez une prime puis rien, le modèle MGE Consulting vous rémunère chaque mois tant que le client utilise son agent IA. C'est la définition d'un revenu passif bâti sur de la valeur réelle.</p>
+      </div>
+      <div class="rente-right reveal">
+        <div class="rente-item"><div class="rente-item-ico">💰</div><div><h4>Commission setup : 10% à 15%</h4><p>Sur chaque frais de mise en place, vous touchez entre 100€ et 270€ par client apporté.</p></div></div>
+        <div class="rente-item"><div class="rente-item-ico">🔄</div><div><h4>Commission mensuelle : 10% récurrent</h4><p>Chaque mois que votre client paie son abonnement (150€ à 500€/mois), vous percevez votre part. Automatiquement.</p></div></div>
+        <div class="rente-item"><div class="rente-item-ico">📊</div><div><h4>Tableau de bord partenaire dédié</h4><p>Vous avez accès en temps réel à vos clients actifs, vos commissions à venir, et l'historique de vos paiements.</p></div></div>
+        <div class="rente-item"><div class="rente-item-ico">⚖️</div><div><h4>Contrat d'apporteur d'affaires officiel</h4><p>Tout est formalisé par contrat. Vos droits, vos commissions, la durée — rien n'est laissé au flou.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALCULATEUR -->
+  <div class="calc-section">
+    <div class="calc-box reveal">
+      <h3>Calculez votre <em style="color:var(--gold)">rente mensuelle</em></h3>
+      <p>Simulez vos revenus selon le nombre de clients que vous apportez</p>
+      <div class="calc-slider-wrap">
+        <label>Nombre de clients apportés : <strong id="nb-clients-val">5</strong></label>
+        <input type="range" min="1" max="20" value="5" id="nb-clients" oninput="calcRente()">
+      </div>
+      <div class="calc-slider-wrap">
+        <label>Abonnement moyen par client : <strong id="abo-val">300</strong>€/mois</label>
+        <input type="range" min="150" max="500" step="50" value="300" id="abo-val-input" oninput="calcRente()">
+      </div>
+      <div class="calc-result">
+        <div class="cr-item"><span class="cr-val" id="r-mensuel">150€</span><span class="cr-label">Rente mensuelle</span></div>
+        <div class="cr-item"><span class="cr-val" id="r-annuel">1 800€</span><span class="cr-label">Revenu annuel</span></div>
+        <div class="cr-item"><span class="cr-val" id="r-setup">750€</span><span class="cr-label">Bonus setup</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REJOINDRE -->
+  <div class="comm-join">
+    <h2>Prêt à construire votre <em>rente récurrente</em> ?</h2>
+    <p>Un échange de 20 minutes suffit pour comprendre le modèle et voir si votre réseau peut en bénéficier. Sans engagement.</p>
+    <div class="comm-join-actions">
+      <a href="mailto:mge75.consulting@gmail.com?subject=Candidature apporteur d'affaires MGE Consulting" class="btn btn-gold">📧 Devenir partenaire →</a>
+      <a href="#contact" class="btn btn-outline" style="color:var(--cream);border-color:rgba(247,244,239,.3)">Poser mes questions d'abord</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-layout">
+    <div class="reveal">
+      <div class="eyebrow">Contact</div>
+      <h2 class="stitle">Prêt à automatiser<br><em>votre activité ?</em></h2>
+      <p class="sbody">Un appel de 20 minutes suffit pour voir si un agent IA peut vous faire gagner du temps. Sans engagement, sans jargon.</p>
+      <div class="contact-methods">
+        <a href="mailto:mge75.consulting@gmail.com" class="cmethod"><span class="cm-ico">📧</span><div><span class="cm-lbl">Email</span><span class="cm-val">mge75.consulting@gmail.com</span></div></a>
+        <a href="tel:+33600000000" class="cmethod"><span class="cm-ico">📞</span><div><span class="cm-lbl">Téléphone</span><span class="cm-val">Sur demande par email</span></div></a>
+        <a href="https://linkedin.com" target="_blank" class="cmethod"><span class="cm-ico">💼</span><div><span class="cm-lbl">LinkedIn</span><span class="cm-val">Salyna Chahboune — MGE Consulting</span></div></a>
+        <a href="https://malt.fr" target="_blank" class="cmethod"><span class="cm-ico">🔗</span><div><span class="cm-lbl">Malt.fr</span><span class="cm-val">Profil freelance — 250€/jour</span></div></a>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="cf-title">Décrivez votre besoin en 2 minutes</div>
+
+      <div id="cf-success" style="display:none;background:rgba(61,186,124,.1);border:1px solid rgba(61,186,124,.3);border-radius:12px;padding:1.3rem 1.5rem;margin-bottom:1.2rem;text-align:center">
+        <div style="font-size:1.8rem;margin-bottom:.5rem">✅</div>
+        <div style="font-weight:600;color:#166534;font-size:.92rem;margin-bottom:.3rem">Message bien reçu !</div>
+        <div style="font-size:.78rem;color:#15803d">Salyna vous répond sous 24h à <strong id="cf-email-retour"></strong></div>
+      </div>
+      <div id="cf-error" style="display:none;background:rgba(220,53,69,.07);border:1px solid rgba(220,53,69,.2);border-radius:12px;padding:1rem 1.4rem;margin-bottom:1rem;font-size:.8rem;color:#b91c1c;text-align:center">
+        ⚠️ Une erreur est survenue. Écrivez directement à <strong>mge75.consulting@gmail.com</strong>
+      </div>
+
+      <div class="cf-row">
+        <div class="cf-group">
+          <label>Prénom & Nom <span style="color:var(--gold)">*</span></label>
+          <input id="cf-nom" type="text" placeholder="Marie Dupont">
+        </div>
+        <div class="cf-group">
+          <label>Entreprise</label>
+          <input id="cf-entreprise" type="text" placeholder="Mon Entreprise SAS">
+        </div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-group">
+          <label>Email <span style="color:var(--gold)">*</span></label>
+          <input id="cf-email" type="email" placeholder="marie@monentreprise.fr">
+        </div>
+        <div class="cf-group">
+          <label>Téléphone</label>
+          <input id="cf-tel" type="tel" placeholder="06 xx xx xx xx">
+        </div>
+      </div>
+      <div class="cf-group">
+        <label>Je souhaite… <span style="color:var(--gold)">*</span></label>
+        <select id="cf-agent">
+          <option value="">— Choisir un agent ou sujet —</option>
+          <option value="Community Manager IA">Community Manager IA — 1 200€ setup + 350€/mois</option>
+          <option value="Relance Commerciale IA">Relance Commerciale IA — 1 000€ setup + 300€/mois</option>
+          <option value="Lead Gen & Prospection IA">Lead Gen & Prospection IA — 1 800€ setup + 500€/mois</option>
+          <option value="Service Client IA 24h/24">Service Client IA 24h/24 — 1 400€ setup + 400€/mois</option>
+          <option value="Rapport & Analyse IA">Rapport & Analyse IA — 900€ setup + 250€/mois</option>
+          <option value="Agenda & RDV IA">Agenda & RDV IA — 800€ setup + 200€/mois</option>
+          <option value="Pack Multi-Agents">Pack Multi-Agents (3 agents ou plus)</option>
+          <option value="Apporteur d'affaires">Devenir apporteur d'affaires</option>
+          <option value="Autre question">Autre question</option>
+        </select>
+      </div>
+      <div class="cf-group">
+        <label>Décrivez votre besoin <span style="color:var(--gold)">*</span></label>
+        <textarea id="cf-message" rows="4" placeholder="Ex : Je passe 5h/semaine à gérer mes réseaux et relancer mes devis sans réponse. Je veux automatiser tout ça et me concentrer sur mon cœur de métier..."></textarea>
+      </div>
+
+      <button class="cf-btn" id="cf-btn" onclick="envoyerFormulaire()">
+        <span id="cf-btn-text">Envoyer ma demande →</span>
+      </button>
+      <p class="cf-note">Réponse sous 24h ouvrées &nbsp;•&nbsp; Sans engagement &nbsp;•&nbsp; 100% confidentiel</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="logo">MGE <span>Consulting</span></a>
+  <p>© 2025 MGE Consulting — Agents IA sur-mesure pour PME & Indépendants</p>
+</footer>
+<div class="footer-siret">SIRET 939 574 190 000 12 • Auto-entrepreneur • Brunoy, 91800 Île-de-France</div>
+
+<script>
+// Reveal
+const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*50);obs.unobserve(e.target)}}),{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+  });
+});
+
+// FAQ
+function tFaq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+
+// Form
+// ══════════════════════════════════════════════
+// FORMULAIRE — Supabase + Make.com webhook
+// ══════════════════════════════════════════════
+const SUPABASE_URL  = 'https://dbwnxvlwsclieidmmbyf.supabase.co';
+const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRid254dmx3c2NsaWVpZG1tYnlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0NjY5NTksImV4cCI6MjA5MDA0Mjk1OX0.MnCulTWrxYc1S8vZ5xiXLbnFDR1AjrY7kIOxajCF5pA';
+const MAKE_WEBHOOK  = 'https://hook.eu2.make.com/p53wr5npiw0a85tuxlqbsk0g4jnybpwb';
+
+async function envoyerFormulaire() {
+  const nom      = document.getElementById('cf-nom').value.trim();
+  const email    = document.getElementById('cf-email').value.trim();
+  const tel      = document.getElementById('cf-tel').value.trim();
+  const entreprise = document.getElementById('cf-entreprise').value.trim();
+  const agent    = document.getElementById('cf-agent').value;
+  const message  = document.getElementById('cf-message').value.trim();
+
+  // Masquer les messages précédents
+  document.getElementById('cf-success').style.display = 'none';
+  document.getElementById('cf-error').style.display   = 'none';
+
+  // Validation
+  if (!nom) { alert('Merci d'indiquer votre nom.'); return; }
+  if (!email || !email.includes('@')) { alert('Merci d'indiquer un email valide.'); return; }
+  if (!agent) { alert('Merci de choisir un sujet.'); return; }
+  if (!message) { alert('Merci de décrire votre besoin.'); return; }
+
+  // Loader
+  const btn  = document.getElementById('cf-btn');
+  const txt  = document.getElementById('cf-btn-text');
+  btn.disabled = true;
+  txt.textContent = '⏳ Envoi en cours…';
+  btn.style.background = 'var(--muted)';
+
+  const payload = {
+    nom,
+    email,
+    telephone: tel,
+    entreprise,
+    agent_souhaite: agent,
+    message,
+    date_contact: new Date().toISOString(),
+    source: 'Site MGE Consulting'
+  };
+
+  let supabaseOk = false;
+  let makeOk     = false;
+
+  // ── 1. Enregistrement Supabase ──
+  try {
+    const res = await fetch(SUPABASE_URL + '/rest/v1/mge_contacts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(payload)
+    });
+    if (res.ok || res.status === 201) {
+      supabaseOk = true;
+      console.log('✅ Supabase OK');
+    } else {
+      const err = await res.text();
+      console.warn('⚠️ Supabase erreur:', res.status, err);
+    }
+  } catch(e) {
+    console.warn('⚠️ Supabase exception:', e);
+  }
+
+  // ── 2. Webhook Make.com → Gmail ──
+  try {
+    const res = await fetch(MAKE_WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (res.ok) {
+      makeOk = true;
+      console.log('✅ Make.com OK');
+    } else {
+      console.warn('⚠️ Make erreur:', res.status);
+    }
+  } catch(e) {
+    console.warn('⚠️ Make exception:', e);
+  }
+
+  // ── 3. Affichage résultat ──
+  btn.disabled = false;
+  txt.textContent = 'Envoyer ma demande →';
+  btn.style.background = '';
+
+  if (supabaseOk || makeOk) {
+    document.getElementById('cf-email-retour').textContent = email;
+    document.getElementById('cf-success').style.display = 'block';
+    // Vider le formulaire
+    ['cf-nom','cf-email','cf-tel','cf-entreprise','cf-message'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('cf-agent').selectedIndex = 0;
+    // Scroll vers le message de succès
+    document.getElementById('cf-success').scrollIntoView({behavior:'smooth', block:'center'});
+  } else {
+    document.getElementById('cf-error').style.display = 'block';
+  }
+}
+
+// Calculateur rente
+function calcRente(){
+  const nb=parseInt(document.getElementById('nb-clients').value);
+  const abo=parseInt(document.getElementById('abo-val-input').value);
+  const setupMoy=1000;
+  const commission=0.10;
+  const mensuel=Math.round(nb*abo*commission);
+  const annuel=mensuel*12;
+  const setup=Math.round(nb*setupMoy*0.12);
+  document.getElementById('nb-clients-val').textContent=nb;
+  document.getElementById('abo-val').textContent=abo;
+  document.getElementById('r-mensuel').textContent=mensuel.toLocaleString('fr')+'€';
+  document.getElementById('r-annuel').textContent=annuel.toLocaleString('fr')+'€';
+  document.getElementById('r-setup').textContent=setup.toLocaleString('fr')+'€';
+}
+calcRente();
+</script>
+</body>
+</html>
